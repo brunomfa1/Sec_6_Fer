@@ -12,16 +12,25 @@ class AlertScreen extends StatelessWidget {
           return AlertDialog(
             elevation: 5,
             title: const Text('Alerta'),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: const[
-                Text('Isso e uma alerta')
+                Text('Isso e uma alerta'),
+                SizedBox( height: 10),
+                FlutterLogo(size: 100,)
               ],
             ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context), 
+                child: const Text('Cancelar')
+              )
+            ],
           );
         }
       );
-  }
+    }
 
   @override
   Widget build(BuildContext context) {
